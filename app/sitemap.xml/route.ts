@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
-import { getMovies, getSeries, getSettings } from '../../../data/db'
+import { getMovies, getSeries, getSettings } from '../../data/db'
+
 export async function GET() {
   const settings = getSettings()
   const movies = getMovies()
