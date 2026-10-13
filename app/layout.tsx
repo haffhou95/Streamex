@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { getSettings } from './data/db'
+import { getSettings } from '../data/db'
 import Navbar from '../components/layout/Navbar'
 import Sidebar from '../components/layout/Sidebar'
 import Banner from '../components/layout/Banner'
@@ -11,10 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: settings.siteName, template: `%s | ${settings.siteName}` },
     description: settings.siteDescription,
     metadataBase: new URL(settings.siteUrl || 'http://localhost:3000'),
-    openGraph: {
-      siteName: settings.siteName,
-      type: 'website',
-    },
+    openGraph: { siteName: settings.siteName, type: 'website' },
     robots: { index: true, follow: true },
   }
 }
